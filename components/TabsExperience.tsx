@@ -1,5 +1,4 @@
 "use client";
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import { cn } from "@/lib/utils";
 import { experiences, Experience } from "./../data/experience"; // import experience data
@@ -51,7 +50,7 @@ export default function TabsExperience() {
             className={cn(
               "py-2 px-4 w-full text-left text-sm md:text-base rounded-md cursor-pointer",
               "data-[state=active]:border-l-4 data-[state=active]:border-purple-500",
-              "data-[state=active]:bg-purple-50 data-[state=active]:text-purple-600"
+              "data-[state=active]:bg-purple-50 data-[state=active]:text-purple-600",
             )}
           >
             {company}
@@ -105,7 +104,7 @@ export default function TabsExperience() {
                 </motion.ul>
               </motion.div>
             </TabsContent>
-          )
+          ),
         )}
       </div>
     </Tabs>

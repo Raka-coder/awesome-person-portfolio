@@ -1,52 +1,65 @@
-import { Github, ExternalLink, Figma, Eye, Clock, Calendar } from "lucide-react"
-import Image from "next/image"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import type { Project, ProjectLink } from "@/types/projects"
+import {
+  Github,
+  ExternalLink,
+  Figma,
+  Eye,
+  Clock,
+  Calendar,
+} from "lucide-react";
+import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import type { Project, ProjectLink } from "@/types/projects";
 
 const getLinkIcon = (type: ProjectLink["type"]) => {
   switch (type) {
     case "github":
-      return <Github size={16} />
+      return <Github size={16} />;
     case "live":
-      return <ExternalLink size={16} />
+      return <ExternalLink size={16} />;
     case "demo":
-      return <Eye size={16} />
+      return <Eye size={16} />;
     case "figma":
-      return <Figma size={16} />
+      return <Figma size={16} />;
     case "behance":
-      return <ExternalLink size={16} />
+      return <ExternalLink size={16} />;
     default:
-      return <ExternalLink size={16} />
+      return <ExternalLink size={16} />;
   }
-}
+};
 
 const getStatusColor = (status: Project["status"]) => {
   switch (status) {
     case "completed":
-      return "bg-green-500/20 text-green-400 border-green-500/30"
+      return "bg-green-500/20 text-green-400 border-green-500/30";
     case "in-progress":
-      return "bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
+      return "bg-yellow-500/20 text-yellow-400 border-yellow-500/30";
     case "planned":
-      return "bg-blue-500/20 text-blue-400 border-blue-500/30"
+      return "bg-blue-500/20 text-blue-400 border-blue-500/30";
     default:
-      return "bg-slate-500/20 text-slate-400 border-slate-500/30"
+      return "bg-slate-500/20 text-slate-400 border-slate-500/30";
   }
-}
+};
 
 const getStatusLabel = (status: Project["status"]) => {
   switch (status) {
     case "completed":
-      return "Completed"
+      return "Completed";
     case "in-progress":
-      return "In Progress"
+      return "In Progress";
     case "planned":
-      return "Planned"
+      return "Planned";
     default:
-      return "Unknown"
+      return "Unknown";
   }
-}
+};
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
@@ -69,7 +82,9 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
         {project.featured && (
           <div className="absolute top-4 left-4">
-            <Badge className="bg-purple-500/20 text-purple-400 border-purple-500/30">Featured</Badge>
+            <Badge className="bg-purple-500/20 text-purple-400 border-purple-500/30">
+              Featured
+            </Badge>
           </div>
         )}
       </div>
@@ -87,7 +102,9 @@ export function ProjectCard({ project }: { project: Project }) {
             })}
           </div>
         </div>
-        <CardDescription className="text-slate-400 text-sm leading-relaxed">{project.description}</CardDescription>
+        <CardDescription className="text-slate-400 text-sm leading-relaxed">
+          {project.description}
+        </CardDescription>
       </CardHeader>
 
       <CardContent className="pt-0">
@@ -98,7 +115,9 @@ export function ProjectCard({ project }: { project: Project }) {
               variant="outline"
               className="text-xs border-slate-600 text-slate-300 hover:bg-slate-700/50"
             >
-              <div className={`w-2 h-2 rounded-full ${category.color} mr-1.5`} />
+              <div
+                className={`w-2 h-2 rounded-full ${category.color} mr-1.5`}
+              />
               {category.name}
             </Badge>
           ))}
@@ -137,5 +156,5 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

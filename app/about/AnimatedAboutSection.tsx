@@ -34,8 +34,12 @@ export default function AnimatedAboutSection() {
         <Card className="mb-6 md:mb-0">
           <CardContent>
             <p className="text-sm sm:text-base md:text-lg text-slate-400 max-w-full sm:max-w-4xl px-2 sm:px-4 text-justify">
-              Hello! I'm Raka, a passionate IT Support based in Indonesia. I am an information technology student with experience in IT support. I have experience handling technical issues such as network and hardware maintenance. This experience has prepared me for technical development and team contributions.
-              I am also ready to learn new technical skills relevant to the industry.
+              Hello! I&lsquo;m Raka, a passionate IT Support based in Indonesia.
+              I am an information technology student with experience in IT
+              support. I have experience handling technical issues such as
+              network and hardware maintenance. This experience has prepared me
+              for technical development and team contributions. I am also ready
+              to learn new technical skills relevant to the industry.
             </p>
           </CardContent>
         </Card>

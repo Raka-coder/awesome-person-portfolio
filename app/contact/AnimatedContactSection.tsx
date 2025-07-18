@@ -22,7 +22,7 @@ export default function AnimatedContactSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg text-center md:text-xl lg:text-2xl text-slate-300 mb-6 md:mb-8 font-medium"
         >
-          Let's work together on a project you're passionate about.
+          Let&lsquo;s work together on a project you&lsquo;re passionate about.
         </motion.h2>
 
         <motion.div

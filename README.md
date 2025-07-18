@@ -1,4 +1,5 @@
 <!-- This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). -->
+
 # Awesome Personal Portfolio
 
 ![Portfolio Screenshot](/public/images/portfolio.webp) <!-- Add screenshot path if available -->
@@ -32,6 +33,7 @@ A modern portfolio website built with Next.js, showcasing projects, skills, and 
 ### Installation
 
 Clone the repository
+
 ```bash
 git clone https://github.com/yourusername/portfolio-next.git
 
@@ -55,8 +57,10 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Space Mono](https://fonts.google.com/specimen/Space+Mono), a new font family for Vercel.
 
 ## Configuration
+
 Environment variables needed: <br>
 `.env.local`
+
 ```bash
 # .env.local
 EMAIL_USER=your_email
@@ -72,4 +76,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-

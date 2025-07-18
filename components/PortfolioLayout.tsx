@@ -1,12 +1,15 @@
-"use client"
-
-import type React from "react"
-import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar"
-import { AppSidebar } from "./Sidebar"
-import { PanelLeft } from "lucide-react"
+"use client";
+import type React from "react";
+import {
+  SidebarProvider,
+  SidebarInset,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
+import { AppSidebar } from "./Sidebar";
+import { PanelLeft } from "lucide-react";
 
 interface PortfolioLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export function PortfolioLayout({ children }: PortfolioLayoutProps) {
@@ -28,5 +31,5 @@ export function PortfolioLayout({ children }: PortfolioLayoutProps) {
         </SidebarInset>
       </SidebarProvider>
     </div>
-  )
+  );
 }

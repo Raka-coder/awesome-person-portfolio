@@ -1,11 +1,10 @@
-import { PortfolioLayout } from "@/components/PortfolioLayout"
-import AnimatedHomeSection from "./home/AnimatedHomeSection"
+import { PortfolioLayout } from "@/components/PortfolioLayout";
+import AnimatedHomeSection from "./home/AnimatedHomeSection";
 
 export default function Portfolio() {
-
   return (
     <PortfolioLayout>
-      <AnimatedHomeSection/>
+      <AnimatedHomeSection />
     </PortfolioLayout>
-  )
+  );
 }

@@ -1,6 +1,6 @@
 export interface Skill {
   name: string;
-  icon: React.ComponentType<{className?: string}>;
+  icon: React.ComponentType<{ className?: string }>;
   description: string;
 }
 

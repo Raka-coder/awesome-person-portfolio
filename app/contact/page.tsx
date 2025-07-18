@@ -1,4 +1,3 @@
-// app/contact/page.tsx
 import AnimatedContactSection from "./AnimatedContactSection";
 import { PortfolioLayout } from "@/components/PortfolioLayout";
 

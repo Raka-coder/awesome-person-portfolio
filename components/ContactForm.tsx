@@ -1,26 +1,31 @@
-"use client"
-
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { contactSchema, ContactFormType } from '@/schema/contactSchema'
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './ui/form'
-import { Input } from './ui/input'
-import { Textarea } from './ui/textarea'
-import { Button } from './ui/button'
-import { Card, CardContent, CardHeader } from './ui/card'
-import { Loader } from 'lucide-react'
-import { toast } from 'sonner'
+"use client";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { contactSchema, ContactFormType } from "@/schema/contactSchema";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "./ui/form";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Button } from "./ui/button";
+import { Card, CardContent, CardHeader } from "./ui/card";
+import { Loader } from "lucide-react";
+import { toast } from "sonner";
 
 export default function ContactForm() {
-
   const form = useForm<ContactFormType>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
-      name: '',
-      email: '',
-      message: '',
-    }
+      name: "",
+      email: "",
+      message: "",
+    },
   });
 
   const [loading, setLoading] = useState(false);
@@ -40,13 +45,13 @@ export default function ContactForm() {
             backgroundColor: "oklch(0.92 0.004 286.32)",
             border: "2px solid oklch(0.627 0.265 303.9)",
             color: "oklch(0.627 0.265 303.9)",
-          }
+          },
         });
-        setTimeout(() => form.reset(), 100);  // Reset ke default values
+        setTimeout(() => form.reset(), 100); // Reset ke default values
       } else {
         throw new Error("Failed to send");
       }
-    } catch (error) {
+    } catch {
       toast.error("Gagal mengirim.", {
         duration: 2000,
       });
@@ -60,13 +65,15 @@ export default function ContactForm() {
       {/* Contact Form Card */}
       <Card>
         <CardHeader>
-          <h2 className="text-xl font-semibold">
-            Contact Me
-          </h2>
+          <h2 className="text-xl font-semibold">Contact Me</h2>
         </CardHeader>
         <CardContent>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4" noValidate>
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="space-y-4"
+              noValidate
+            >
               <FormField
                 control={form.control}
                 name="name"
@@ -78,7 +85,7 @@ export default function ContactForm() {
                         id="name"
                         type="text"
                         className="w-full mt-2 focus-visible:border-ring focus-visible:ring-chart-4/60"
-                        placeholder='Your name (optional)'
+                        placeholder="Your name (optional)"
                         {...field}
                       />
                     </FormControl>
@@ -98,7 +105,7 @@ export default function ContactForm() {
                         id="email"
                         type="email"
                         className="w-full mt-2 focus-visible:border-ring focus-visible:ring-chart-4/60"
-                        placeholder='your@gmail.com'
+                        placeholder="your@gmail.com"
                         {...field}
                       />
                     </FormControl>
@@ -118,7 +125,7 @@ export default function ContactForm() {
                         id="message"
                         rows={5}
                         className="w-full mt-2 focus-visible:border-ring focus-visible:ring-chart-4/60 resize-none"
-                        placeholder='Type your message'
+                        placeholder="Type your message"
                         {...field}
                       />
                     </FormControl>
@@ -127,10 +134,10 @@ export default function ContactForm() {
                 )}
               />
 
-              <Button 
-                variant="default" 
-                type="submit" 
-                disabled={loading || form.formState.isSubmitting} 
+              <Button
+                variant="default"
+                type="submit"
+                disabled={loading || form.formState.isSubmitting}
                 className="cursor-pointer"
               >
                 {loading || form.formState.isSubmitting ? (
@@ -144,5 +151,5 @@ export default function ContactForm() {
         </CardContent>
       </Card>
     </>
-  )
+  );
 }

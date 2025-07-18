@@ -1,11 +1,11 @@
-import { Card, CardContent, CardHeader } from './ui/card'
-import { Github, Instagram, Mail, MapPin } from 'lucide-react'
-import Link from 'next/link'
+import { Card, CardContent, CardHeader } from "./ui/card";
+import { Github, Instagram, Mail, MapPin } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactInformation() {
   return (
     <>
-    {/* Contact Information Card */}
+      {/* Contact Information Card */}
       <Card>
         <CardHeader>
           <h2 className="text-xl font-semibold">Contact Information</h2>
@@ -28,18 +28,18 @@ export default function ContactInformation() {
         </CardHeader>
         <CardContent>
           <div className="items-center space-x-3">
-            <p>Let's connect</p>
-            <div className='flex space-x-3 pt-3'>
-            <Link href="https://github.com/Raka-coder">
-              <Github className="w-6 h-6 text-chart-4" />
-            </Link>
-            <Link href="https://www.instagram.com/rakresptra/">
-              <Instagram className="w-6 h-6 text-chart-4" />
-            </Link>
+            <p>Let&lsquo;s connect</p>
+            <div className="flex space-x-3 pt-3">
+              <Link href="https://github.com/Raka-coder">
+                <Github className="w-6 h-6 text-chart-4" />
+              </Link>
+              <Link href="https://www.instagram.com/rakresptra/">
+                <Instagram className="w-6 h-6 text-chart-4" />
+              </Link>
             </div>
           </div>
         </CardContent>
       </Card>
     </>
-  )
+  );
 }

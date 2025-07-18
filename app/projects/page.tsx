@@ -1,6 +1,6 @@
-import type { Metadata } from 'next'
-import { PortfolioLayout } from '@/components/PortfolioLayout'
-import AnimatedProjectsSection from './AnimatedProjectsSection';
+import type { Metadata } from "next";
+import { PortfolioLayout } from "@/components/PortfolioLayout";
+import AnimatedProjectsSection from "./AnimatedProjectsSection";
 
 export const metadata: Metadata = {
   title: "Raka | My project",
@@ -12,5 +12,5 @@ export default function Project() {
     <PortfolioLayout>
       <AnimatedProjectsSection />
     </PortfolioLayout>
-  )
+  );
 }

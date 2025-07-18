@@ -1,7 +1,6 @@
-"use client"
-
-import { Home, User, FolderOpen, Mail, Heart } from "lucide-react"
-import Image from "next/image"
+"use client";
+import { Home, User, FolderOpen, Mail, Heart } from "lucide-react";
+import Image from "next/image";
 import {
   Sidebar,
   SidebarContent,
@@ -12,9 +11,9 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+} from "@/components/ui/sidebar";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navigationItems = [
   {
@@ -38,10 +37,10 @@ const navigationItems = [
     url: "/contact",
     icon: Mail,
   },
-]
+];
 
 export function AppSidebar() {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <Sidebar className="border-r border-slate-700/50 bg-slate-800/50">
@@ -74,7 +73,7 @@ export function AppSidebar() {
             <SidebarMenu>
               {navigationItems.map((item) => {
                 // Determine if this item is active by comparing pathname
-                const isActive = pathname === item.url
+                const isActive = pathname === item.url;
                 return (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton
@@ -90,13 +89,18 @@ export function AppSidebar() {
                         transition-all duration-200 rounded-lg h-11 group-data-[collapsible=icon]:h-10 group-data-[collapsible=icon]:w-10 group-data-[collapsible=icon]:p-0 group-data-[collapsible=icon]:justify-center
                       `}
                     >
-                      <Link href={item.url} className="flex items-center gap-3 group-data-[collapsible=icon]:justify-center">
+                      <Link
+                        href={item.url}
+                        className="flex items-center gap-3 group-data-[collapsible=icon]:justify-center"
+                      >
                         <item.icon size={18} className="shrink-0" />
-                        <span className="group-data-[collapsible=icon]:sr-only">{item.title}</span>
+                        <span className="group-data-[collapsible=icon]:sr-only">
+                          {item.title}
+                        </span>
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
-                )
+                );
               })}
             </SidebarMenu>
           </SidebarGroupContent>
@@ -107,10 +111,15 @@ export function AppSidebar() {
         <div className="text-center text-xs text-slate-500 group-data-[collapsible=icon]:hidden transition-all duration-300">
           <p className="mb-1">© 2025 Raka Restu</p>
           <p className="flex items-center justify-center gap-1">
-            Built with <Heart size={12} className="animate-pulse text-chart-5 fill-current" /> using React
+            Built with{" "}
+            <Heart
+              size={12}
+              className="animate-pulse text-chart-5 fill-current"
+            />{" "}
+            using React
           </p>
         </div>
       </SidebarFooter>
     </Sidebar>
-  )
+  );
 }

@@ -1,11 +1,11 @@
-
-import type { Metadata } from "next"
-import { PortfolioLayout } from "@/components/PortfolioLayout"
+import type { Metadata } from "next";
+import { PortfolioLayout } from "@/components/PortfolioLayout";
 import AnimatedAboutSection from "./AnimatedAboutSection";
 
 export const metadata: Metadata = {
   title: "Raka | About me",
-  description: "Learn more about Raka Restu, his skills, expertise, and experience.",
+  description:
+    "Learn more about Raka Restu, his skills, expertise, and experience.",
 };
 
 export default function About() {
@@ -13,5 +13,5 @@ export default function About() {
     <PortfolioLayout>
       <AnimatedAboutSection />
     </PortfolioLayout>
-  )
+  );
 }

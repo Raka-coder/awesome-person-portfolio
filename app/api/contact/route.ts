@@ -7,7 +7,10 @@ export async function POST(req: Request) {
   const validation = contactSchema.safeParse(body);
 
   if (!validation.success) {
-    return NextResponse.json({ error: validation.error.flatten() }, { status: 400 });
+    return NextResponse.json(
+      { error: validation.error.flatten() },
+      { status: 400 },
+    );
   }
 
   const { name, email, message } = validation.data;
@@ -25,6 +28,10 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (err) {
-    return NextResponse.json({ error: "Gagal mengirim email" }, { status: 500 });
+    console.error("Error sending email:", err);
+    return NextResponse.json(
+      { error: "Gagal mengirim email" },
+      { status: 500 },
+    );
   }
 }

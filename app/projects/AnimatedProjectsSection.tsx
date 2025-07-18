@@ -1,7 +1,7 @@
 "use client";
-import { ProjectTabs } from '@/components/ProjectsTablist';
-import { projectsData } from '@/data/projects';
-import { motion } from 'framer-motion';
+import { ProjectTabs } from "@/components/ProjectsTablist";
+import { projectsData } from "@/data/projects";
+import { motion } from "framer-motion";
 
 export default function AnimatedProjectsSection() {
   return (
@@ -27,7 +27,7 @@ export default function AnimatedProjectsSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg text-center md:text-xl lg:text-2xl text-slate-300 mb-6 md:mb-8 font-medium"
         >
-          Some of my notable projects and contributions I've made so far.
+          Some of my notable projects and contributions I&lsquo;ve made so far.
         </motion.h2>
 
         <motion.p
@@ -44,9 +44,12 @@ export default function AnimatedProjectsSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <ProjectTabs projects={projectsData.projects} categories={projectsData.categories} />
+          <ProjectTabs
+            projects={projectsData.projects}
+            categories={projectsData.categories}
+          />
         </motion.div>
       </div>
     </motion.div>
-  )
+  );
 }
