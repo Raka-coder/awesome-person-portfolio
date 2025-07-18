@@ -6,6 +6,9 @@
 
 A modern portfolio website built with Next.js, showcasing projects, skills, and experience.
 
+## Demo
+
+
 ## Features
 
 - Responsive design for all devices
@@ -35,7 +38,7 @@ A modern portfolio website built with Next.js, showcasing projects, skills, and 
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/portfolio-next.git
+git clone https://github.com/Raka-coder/awsome-person-portfolio.git
 
 ## Getting Started
 
