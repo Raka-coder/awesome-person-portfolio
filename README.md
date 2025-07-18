@@ -7,8 +7,7 @@
 A modern portfolio website built with Next.js, showcasing projects, skills, and experience.
 
 ## Demo
-
-
+[Demo URL](https://raka-restu.vercel.app/)
 ## Features
 
 - Responsive design for all devices
@@ -38,7 +37,7 @@ A modern portfolio website built with Next.js, showcasing projects, skills, and 
 Clone the repository
 
 ```bash
-git clone https://github.com/Raka-coder/awsome-person-portfolio.git
+git clone https://github.com/Raka-coder/awesome-person-portfolio.git
 
 ## Getting Started
 
