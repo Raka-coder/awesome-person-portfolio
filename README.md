@@ -1,78 +1,116 @@
-# Awesome Personal Portfolio
+# 🚀 Awesome Personal Portfolio
 
-![Portfolio Screenshot](/public/images/portfolio.webp) <!-- Add screenshot path if available -->
+![Portfolio Banner](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.0-ff69b4?style=for-the-badge&logo=framer)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)
 
-A modern portfolio website built with Next.js, showcasing projects, skills, and experience.
+A modern, high-performance portfolio website built with **Next.js 15 (App Router)**. This project features a sleek dark-themed UI, fluid animations, and a well-structured data management system.
 
-## Demo
-[Demo URL](https://raka-restu.vercel.app/)
-## Features
+---
 
-- Responsive design for all devices
-- Animated transitions with Framer Motion
-- Project categorization and filtering
-- Contact form with email functionality
-- Dark mode UI
-- Performance optimized
+## ✨ Features
 
-## Technologies
+- 📱 **Fully Responsive:** Optimized for mobile, tablet, and desktop.
+- 🎭 **Smooth Animations:** Powered by Framer Motion and GSAP for a premium feel.
+- 🗂️ **Categorized Projects:** Dynamic project filtering and detailed project pages.
+- 🛡️ **Secure Contact Form:** Features Zod validation, Rate Limiting, Sanitization, and Honeypot protection.
+- 🏷️ **Shields.io Integration:** Skills are displayed using high-quality for-the-badge icons.
+- 🏗️ **JSON-Driven Content:** Easily update projects, experience, and skills without touching the code.
 
-- ⚛️ Next.js 15 (App Router)
-- 🎨 Tailwind CSS / Shadcn UI
-- ✨ Framer Motion
-- 📝 React Hook Form + Zod validation
-- 📱 Fully responsive design
+---
 
-## Getting Started
+## 🛠️ Tech Stack
 
-### Prerequisites
+### Frontend
 
-- Node.js 20+
-- npm/yarn/pnpm/bun
+- **Framework:** Next.js 15 (App Router)
+- **Styling:** Tailwind CSS 4.0
+- **UI Components:** Shadcn UI (Radix UI)
+- **Animations:** Framer Motion, GSAP
+- **State Management:** Zustand
 
-### Installation
+### Form Handling & Validation
 
-Clone the repository
+- **Forms:** React Hook Form
+- **Validation:** Zod
+
+### Backend & Infrastructure
+
+- **API:** Next.js Server Actions & Route Handlers
+- **Email:** Nodemailer (SMTP)
+- **Runtime:** Bun / Node.js
+
+---
+
+## 📂 Project Structure
+
+```bash
+.
+├── app/                  # Next.js App Router (Pages & APIs)
+├── components/           # Reusable UI components
+├── data/                 # JSON-based content (Projects, Skills, Experience)
+├── hooks/                # Custom React hooks
+├── lib/                  # Utilities (Mailer, Rate-limiter, etc.)
+├── public/               # Static assets
+├── schema/               # Zod validation schemas
+└── types/                # TypeScript interfaces
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+
+- [Bun](https://bun.sh/) (Recommended) or Node.js 20+
+
+### 2. Installation
 
 ```bash
 git clone https://github.com/Raka-coder/awesome-person-portfolio.git
-
-## Getting Started
-
-First, run the development server:
-
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd awesome-person-portfolio
+bun install # or npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a `.env.local` file in the root directory:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Space Mono](https://fonts.google.com/specimen/Space+Mono), a new font family for Vercel.
+```env
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-app-password
+EMAIL_RECEIVER=receiver-email@gmail.com
+```
 
-## Configuration
-
-Environment variables needed: <br>
-`.env.local`
+### 4. Development
 
 ```bash
-# .env.local
-EMAIL_USER=your_email
-EMAIL_PASS=your_password
-EMAIL_FROM=your_from_email
+bun dev # or npm run dev
 ```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛡️ Security Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+We take security seriously. The following measures are implemented:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- ✅ **Honeypot Field:** To prevent automated spam bots.
+- ✅ **Rate Limiting:** Prevents brute-force/multiple submissions from the same IP.
+- ✅ **Server-side Sanitization:** Escapes HTML to prevent XSS.
+- ✅ **Strict Zod Validation:** Ensures only valid data reaches the server.
+
+---
+
+## 👤 Author
+
+**Raka Restu**
+
+- GitHub: [@Raka-coder](https://github.com/Raka-coder)
+- Portfolio: [raka-restu.vercel.app](https://raka-restu.vercel.app/)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
