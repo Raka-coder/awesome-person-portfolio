@@ -1,0 +1,25 @@
+{
+  "id": "3",
+  "name": "Task Manager App",
+  "description": "Simple CRUD task management application with supabase serverless backend database.",
+  "longDescription": "A simple CRUD task manager.",
+  "categories": ["web", "frontend"],
+  "links": [
+    {
+      "type": "github",
+      "url": "https://github.com/Raka-coder/react-supabase-crud-taskmanager",
+      "label": "View Code"
+    },
+    {
+      "type": "demo",
+      "url": "https://react-supabase-crud-taskmanager.vercel.app/",
+      "label": "Try Demo"
+    }
+  ],
+  "image": "/images/react-supabase.webp",
+  "imageAlt": "Task Management App Screenshot",
+  "technologies": ["React", "Tailwind", "Supabase"],
+  "status": "completed",
+  "featured": true,
+  "createdAt": "2025-04-20"
+}

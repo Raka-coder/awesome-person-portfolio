@@ -1,0 +1,5 @@
+[
+  { "id": "web", "name": "Web", "color": "bg-blue-500" },
+  { "id": "frontend", "name": "Frontend", "color": "bg-cyan-500" },
+  { "id": "iot", "name": "IoT", "color": "bg-emerald-400" }
+]

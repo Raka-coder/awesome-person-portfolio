@@ -1,0 +1,25 @@
+{
+  "id": "2",
+  "name": "Project Turunan Diferensial Kalkulus I",
+  "description": "Web application that can be used to calculate diferential derivative",
+  "longDescription": "A project includes material derivative differential, derivative calculator, and dark mode.",
+  "categories": ["web", "frontend"],
+  "links": [
+    {
+      "type": "github",
+      "url": "https://github.com/Raka-coder/project-web-turdif-kalkulus_I",
+      "label": "View Code"
+    },
+    {
+      "type": "live",
+      "url": "https://turdif.vercel.app/",
+      "label": "Live Demo"
+    }
+  ],
+  "image": "/images/turdif.webp",
+  "imageAlt": "Project Turunan Diferensial Kalkalus I",
+  "technologies": ["React", "Tailwind", "Mathjax"],
+  "status": "completed",
+  "featured": true,
+  "createdAt": "2024-12-26"
+}

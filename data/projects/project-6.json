@@ -1,0 +1,25 @@
+{
+  "id": "6",
+  "name": "TurboSched Website",
+  "description": "Interactive platform for visualizing and understanding CPU process scheduling algorithms Turn complex theory into visual understanding with real-time FCFS, SJF, and Round Robin simulations",
+  "longDescription": "CPU Process Scheduling is an interactive web application designed to help students and professionals understand the concept of process scheduling on operating systems. The application provides real-time visualization of various CPU scheduling algorithms with dynamic Gantt Chart representation..",
+  "categories": ["web", "frontend"],
+  "links": [
+    {
+      "type": "github",
+      "url": "https://github.com/Raka-coder/penjadwalan-proses-next",
+      "label": "View Code"
+    },
+    {
+      "type": "live",
+      "url": "https://turbosched.vercel.app/",
+      "label": "Visit Site"
+    }
+  ],
+  "image": "/images/turbosched.webp",
+  "imageAlt": "TurboSched Website Screenshot",
+  "technologies": ["Next.js", "TypeScript", "Shadcn", "Framer Motion"],
+  "status": "completed",
+  "featured": true,
+  "createdAt": "2025-11-12"
+}

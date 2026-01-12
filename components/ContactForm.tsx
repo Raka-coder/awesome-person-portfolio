@@ -114,6 +114,26 @@ export default function ContactForm() {
                 )}
               />
 
+              {/* Honeypot field - hidden from users */}
+              <div className="hidden" aria-hidden="true">
+                <FormField
+                  control={form.control}
+                  name="honeypot"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          tabIndex={-1}
+                          autoComplete="off"
+                          placeholder="Do not fill this"
+                          {...field}
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+              </div>
+
               <FormField
                 control={form.control}
                 name="message"

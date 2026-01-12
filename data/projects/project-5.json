@@ -1,0 +1,24 @@
+{
+  "id": "5",
+  "name": "Portfolio Website",
+  "description": "Personal portfolio website built with Next.js featuring animated motion and responsive design.",
+  "longDescription": "A modern portfolio website showcasing projects and skills. Built with Next.js 15, featuring server-side rendering, responsive design, and optimized performance. Includes project showcase, and contact functionality.",
+  "categories": ["web", "frontend"],
+  "links": [
+    {
+      "type": "github",
+      "url": "https://github.com/Raka-coder/awesome-person-portfolio",
+      "label": "View Code"
+    },
+    {
+      "type": "live",
+      "url": "/",
+      "label": "Visit Site"
+    }
+  ],
+  "image": "/images/portfolio.webp",
+  "imageAlt": "Portfolio Website Screenshot",
+  "technologies": ["Next.js", "TypeScript", "Shadcn", "Framer Motion"],
+  "status": "completed",
+  "createdAt": "2025-07-12"
+}

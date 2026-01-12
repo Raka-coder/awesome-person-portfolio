@@ -1,0 +1,25 @@
+{
+  "id": "1",
+  "name": "Project GeometPop Kalkulus II",
+  "description": "Web application that can be used to calculate population modeling with geometric series",
+  "longDescription": "A project includes geometry population calculator, chart preview, and quiz exams.",
+  "categories": ["web", "frontend"],
+  "links": [
+    {
+      "type": "github",
+      "url": "https://github.com/Raka-coder/project-geometpop-kalkulus-II",
+      "label": "View Code"
+    },
+    {
+      "type": "live",
+      "url": "https://geometpop.pages.dev/",
+      "label": "Live Demo"
+    }
+  ],
+  "image": "/images/geometpop.webp",
+  "imageAlt": "Project  GeometPop Kalkulus II",
+  "technologies": ["React", "Tailwind", "Mathjax"],
+  "status": "completed",
+  "featured": true,
+  "createdAt": "2025-05-26"
+}

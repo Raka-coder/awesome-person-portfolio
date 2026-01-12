@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Frontend",
+    "icon": "Code",
+    "items": [
+      { "name": "React", "badge": "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" },
+      { "name": "Next.js", "badge": "https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white" },
+      { "name": "TypeScript", "badge": "https://img.shields.io/badge/typescript-%23007acc.svg?style=for-the-badge&logo=typescript&logoColor=white" },
+      { "name": "TailwindCSS", "badge": "https://img.shields.io/badge/tailwind-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" }
+    ]
+  },
+  {
+    "name": "Backend",
+    "icon": "Zap",
+    "items": [
+      { "name": "Prisma", "badge": "https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white" },
+      { "name": "PostgreSQL", "badge": "https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white" },
+      { "name": "MySQL", "badge": "https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white" },
+      { "name": "Bun", "badge": "https://img.shields.io/badge/Bun-%23000000.svg?style=for-the-badge&logo=bun&logoColor=white" },
+      { "name": "Supabase", "badge": "https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" }
+
+    ]
+  },
+  {
+    "name": "Design",
+    "icon": "Palette",
+    "items": [
+      { "name": "Figma", "badge": "https://img.shields.io/badge/figma-gray.svg?style=for-the-badge&logo=figma&logoColor=white" }
+    ]
+  },
+  {
+    "name": "Hardware & Others",
+    "icon": "Heart",
+    "items": [
+      { "name": "Git", "badge": "https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" },
+      { "name": "Arduino", "badge": "https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white" },
+      { "name": "Ubuntu", "badge": "https://img.shields.io/badge/Ubuntu-E9433F?style=for-the-badge&logo=ubuntu&logoColor=white" },
+      { "name": "Networking", "badge": "https://img.shields.io/badge/Networking-blue?style=for-the-badge&logo=cisco&logoColor=white" }
+    ]
+  }
+]

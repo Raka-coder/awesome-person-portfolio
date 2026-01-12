@@ -1,0 +1,20 @@
+{
+  "id": "4",
+  "name": "Smart Home IoT",
+  "description": "A smart home IoT project with lighting control, and assistant.",
+  "longDescription": "A smart home IoT project with lighting control, and voice assistant. Utilizes Google Home, Sinric Pro API, and voice recognition technologies for enhanced convenience.",
+  "categories": ["iot"],
+  "links": [
+    {
+      "type": "github",
+      "url": "https://github.com/Raka-coder/project-smarthome-pio",
+      "label": "View Code"
+    }
+  ],
+  "image": "/images/smart-home.webp",
+  "imageAlt": "Smart Home IoT with google home",
+  "technologies": ["C++", "PlatformIO", "Sinric Pro", "Google Home", "ESP8266"],
+  "status": "completed",
+  "featured": true,
+  "createdAt": "2024-01-10"
+}

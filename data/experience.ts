@@ -1,3 +1,5 @@
+import experienceData from "./experience/experience.json";
+
 export type Experience = {
   company: string;
   position: string;
@@ -6,30 +8,9 @@ export type Experience = {
   description: string[];
 };
 
-// Example data, you can add more
-export const experiences: Experience[] = [
-  {
-    company: "CV. Klik Media",
-    position: "IT Support & Service",
-    start: { month: 4, year: 2023 },
-    end: { month: 7, year: 2023 },
-    description: [
-      "Handle customer inquiries and note down hardware/software problems.",
-      "Handle the physical hardware/software installation.",
-      "Manage and maintain including network, and surveillance.",
-    ],
-  },
-  {
-    company: "Technonet Solution",
-    position: "IT Support & System Administrator",
-    start: { month: 7, year: 2023 },
-    end: { month: 12, year: 2023 },
-    description: [
-      "Handle user-facing tasks including technical diagnostics, and print-related services.",
-      "Perform structured cabling for local area networks and fiber optics.",
-    ],
-  },
-];
+export const experiences: Experience[] = (experienceData as any[]).map((exp) => ({
+  ...exp,
+})) as Experience[];
 
 // Sort experiences so oldest is last (start date ascending, then reversed)
 experiences.sort((a, b) => {

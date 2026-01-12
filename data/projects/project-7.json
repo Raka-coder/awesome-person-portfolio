@@ -1,0 +1,20 @@
+{
+  "id": "7",
+  "name": "Sistem Manajemen Keuangan - Mie Ayam Baso Sadulur",
+  "description": "Modern MSME Financial Management System Complete platform for managing MSME finance, inventory and business analysis with interactive dashboards and real-time reports.",
+  "longDescription": "financial management system specially designed for culinary MSMEs. This platform combines digital financial recording, inventory management, menu analysis, and KPI dashboards in one modern, easy-to-use application equipped with a landing page/company profile.",
+  "categories": ["web", "frontend"],
+  "links": [
+    {
+      "type": "live",
+      "url": "https://umkm-mieayambasosadulur.vercel.app/",
+      "label": "Visit Site"
+    }
+  ],
+  "image": "/images/imk-umkm.webp",
+  "imageAlt": "IMK UMKM Screenshot",
+  "technologies": ["Next.js", "TypeScript", "Shadcn", "Framer Motion", "Supabase"],
+  "status": "completed",
+  "featured": true,
+  "createdAt": "2025-11-28"
+}
