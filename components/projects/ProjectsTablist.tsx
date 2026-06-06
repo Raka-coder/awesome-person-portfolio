@@ -6,6 +6,8 @@ import type { Project, ProjectCategory } from "@/types/projects";
 import type { TabItem } from "@/types/tabs";
 import { ProjectCard } from "./CardProjects";
 import { SortOptions } from "./SortOptions";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 interface ProjectTabsProps {
   projects: Project[];
@@ -48,12 +50,14 @@ export function ProjectTabs({ projects, categories }: ProjectTabsProps) {
   ];
 
   const getFilteredProjects = (tabValue: string): Project[] => {
-    if (tabValue === "all") return projects;
-    if (tabValue === "featured") return projects.filter((p) => p.featured);
-    return projects.filter((p) => p.categories.some((c) => c.id === tabValue));
+    let filtered = projects;
+    if (tabValue === "featured") filtered = projects.filter((p) => p.featured);
+    else if (tabValue !== "all") filtered = projects.filter((p) => p.categories.some((c) => c.id === tabValue));
+    
+    return sortProjects(filtered);
   };
 
-  const filteredProjects = sortProjects(getFilteredProjects(selectedTab));
+  const filteredProjects = getFilteredProjects(selectedTab);
 
   return (
     <div className="w-full">
@@ -62,71 +66,81 @@ export function ProjectTabs({ projects, categories }: ProjectTabsProps) {
         onValueChange={setSelectedTab}
         className="w-full"
       >
-        <div className="flex flex-col lg:flex-row gap-6">
-          <div className="lg:w-64 flex-shrink-0">
-            <TabsList className="flex flex-col h-auto w-full bg-card p-2 gap-1 lg:sticky lg:top-6">
-              {tabItems.map((tab) => (
-                <TabsTrigger
-                  key={tab.id}
-                  value={tab.value}
-                  className="w-full justify-between data-[state=active]:bg-purple-600/20 data-[state=active]:text-purple-400 data-[state=active]:border-purple-500/30 text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all duration-200 border border-transparent"
-                >
-                  <span>{tab.label}</span>
-                  <Badge
-                    variant="secondary"
-                    className="ml-2 bg-slate-700 text-slate-300 text-xs"
+        <div className="flex flex-col lg:flex-row gap-12">
+          {/* Sidebar Tabs */}
+          <div className="lg:w-72 flex-shrink-0">
+            <div className="lg:sticky lg:top-32 space-y-6">
+              <div className="hidden lg:block">
+                <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground/30 mb-4 px-4">
+                  Filter by Category
+                </h3>
+              </div>
+              <TabsList className="flex flex-col h-auto w-full bg-transparent p-0 gap-1.5">
+                {tabItems.map((tab) => (
+                  <TabsTrigger
+                    key={tab.id}
+                    value={tab.value}
+                    className={cn(
+                      "w-full justify-between px-4 py-3 rounded-xl transition-all duration-300 border border-transparent",
+                      "data-[state=active]:bg-primary/10 data-[state=active]:text-primary data-[state=active]:border-primary/20",
+                      "text-foreground/40 hover:text-foreground/80 hover:bg-secondary/50"
+                    )}
                   >
-                    {tab.count}
-                  </Badge>
-                </TabsTrigger>
-              ))}
-            </TabsList>
+                    <span className="text-sm font-bold tracking-tight">{tab.label}</span>
+                    <span className="text-[10px] font-mono opacity-50">[{tab.count}]</span>
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
           </div>
 
+          {/* Main Content */}
           <div className="flex-1">
-            <SortOptions sortOrder={sortOrder} setSortOrder={setSortOrder} />
-
-            {tabItems.map((tab) => (
-              <TabsContent key={tab.id} value={tab.value} className="mt-0">
-                <div className="mb-6">
-                  <h2 className="text-2xl font-bold text-white mb-2">
-                    {tab.label}
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-12">
+               <div>
+                  <h2 className="text-2xl font-black text-foreground tracking-tight mb-1">
+                    {tabItems.find(t => t.value === selectedTab)?.label}
                   </h2>
-                  <p className="text-slate-400">
-                    {tab.count} project{tab.count !== 1 ? "s" : ""} found
+                  <p className="text-sm font-medium text-foreground/40 uppercase tracking-widest">
+                    {filteredProjects.length} Result{filteredProjects.length !== 1 ? 's' : ''} Found
                   </p>
-                </div>
+               </div>
+               <div className="flex items-center gap-4">
+                  <SortOptions sortOrder={sortOrder} setSortOrder={setSortOrder} />
+               </div>
+            </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {filteredProjects
-                    .filter((project) =>
-                      tab.value === "all"
-                        ? true
-                        : tab.value === "featured"
-                          ? project.featured
-                          : project.categories.some((c) => c.id === tab.value),
-                    )
-                    .map((project) => (
-                      <ProjectCard key={project.id} project={project} />
-                    ))}
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <AnimatePresence mode="popLayout">
+                {filteredProjects.map((project, index) => (
+                  <motion.div
+                    key={project.id}
+                    layout
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ 
+                      duration: 0.5, 
+                      delay: index * 0.05,
+                      ease: [0.21, 0.45, 0.32, 0.9]
+                    }}
+                  >
+                    <ProjectCard project={project} />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </div>
 
-                {filteredProjects.filter((project) =>
-                  tab.value === "all"
-                    ? true
-                    : tab.value === "featured"
-                      ? project.featured
-                      : project.categories.some((c) => c.id === tab.value),
-                ).length === 0 && (
-                  <div className="text-center py-12">
-                    <div className="text-slate-500 mb-2">No projects found</div>
-                    <p className="text-sm text-slate-600">
-                      Try selecting a different category or check back later.
-                    </p>
-                  </div>
-                )}
-              </TabsContent>
-            ))}
+            {filteredProjects.length === 0 && (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-center py-24 rounded-[2rem] border border-dashed border-border/50 bg-secondary/20"
+              >
+                <div className="text-foreground/20 font-black text-4xl mb-4">404_EMPTY</div>
+                <p className="text-foreground/40 font-medium">No projects matching the current filter criteria.</p>
+              </motion.div>
+            )}
           </div>
         </div>
       </Tabs>
