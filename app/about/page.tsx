@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PortfolioLayout } from "@/components/PortfolioLayout";
+import { PortfolioLayout } from "@/components/layout/PortfolioLayout";
 import AnimatedAboutSection from "./AnimatedAboutSection";
 
 export const metadata: Metadata = {

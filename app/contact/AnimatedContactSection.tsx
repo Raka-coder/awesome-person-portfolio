@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import ContactForm from "@/components/ContactForm";
-import ContactInformation from "@/components/ContactInformation";
+import ContactForm from "@/components/contact/ContactForm";
+import ContactInformation from "@/components/contact/ContactInformation";
 
 export default function AnimatedContactSection() {
   return (

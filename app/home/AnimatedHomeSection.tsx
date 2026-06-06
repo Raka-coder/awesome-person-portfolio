@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import SplitText from "@/components/SplitText";
+import SplitText from "@/components/home/SplitText";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Github, Linkedin, View } from "lucide-react";

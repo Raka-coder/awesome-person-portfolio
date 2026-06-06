@@ -1,5 +1,5 @@
 "use client";
-import { ProjectTabs } from "@/components/ProjectsTablist";
+import { ProjectTabs } from "@/components/projects/ProjectsTablist";
 import { projectsData } from "@/data/projects";
 import { motion } from "framer-motion";
 

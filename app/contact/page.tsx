@@ -1,5 +1,5 @@
 import AnimatedContactSection from "./AnimatedContactSection";
-import { PortfolioLayout } from "@/components/PortfolioLayout";
+import { PortfolioLayout } from "@/components/layout/PortfolioLayout";
 
 export const metadata = {
   title: "Raka | Contact",

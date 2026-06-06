@@ -1,4 +1,4 @@
-import { PortfolioLayout } from "@/components/PortfolioLayout";
+import { PortfolioLayout } from "@/components/layout/PortfolioLayout";
 import AnimatedHomeSection from "./home/AnimatedHomeSection";
 
 export default function Portfolio() {
