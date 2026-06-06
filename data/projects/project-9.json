@@ -1,0 +1,20 @@
+{
+  "id": "9",
+  "name": "Sistem Informasi POS ATK",
+  "description": "Sistem POS untuk Usaha Toko ATK dengan integrasi AI, Midtrans, printer thermal, dan RBAC",
+  "longDescription": "POS ATK adalah solusi Point of Sale berbasis Cloud untuk Toko Alat Tulis Kantor. Termasuk fitur POS lengkap (scan barcode, multi-payment QRIS/Midtrans, PPN otomatis, cetak struk thermal), manajemen produk & inventaris dengan riwayat stok, RBAC (Owner/Kasir) dengan 2FA, laporan keuangan & laba rugi, dashboard analitik real-time, AI Business Consultant (Gemini 2.5 Flash) dengan 8 tools business intelligence, Midtrans payment gateway, printer thermal ESC/POS, dan SEO otomatis. Dibangun dengan Laravel 13, React 19, Inertia v3, TypeScript, Tailwind CSS v4, PostgreSQL.",
+  "categories": ["web", "frontend"],
+  "links": [
+    {
+      "type": "github",
+      "url": "https://github.com/Raka-coder/laravel-si-pos-atk",
+      "label": "View Code"
+    }
+  ],
+  "image": "/images/laravel-pos-atk.webp",
+  "imageAlt": "Laravel SI POS ATK Dashboard",
+  "technologies": ["PHP", "Laravel", "React", "Inertia.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Midtrans", "Gemini AI", "Vite", "shadcn/ui", "Zustand", "TanStack Query"],
+  "status": "completed",
+  "featured": true,
+  "createdAt": "2026-05-22"
+}

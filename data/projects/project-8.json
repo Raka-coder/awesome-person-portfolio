@@ -1,0 +1,25 @@
+{
+  "id": "8",
+  "name": "Lexicon Timebomb",
+  "description": "Game sambung kata multiplayer real-time dengan validasi KBBI dan timer bom 15 detik",
+  "longDescription": "Lexicon Timebomb adalah game adu kosakata multi-pemain secara real-time. Pemain ditantang untuk menyambung kata berdasarkan huruf terakhir dari kata sebelumnya, sebelum bom waktu meledak! Termasuk validasi KBBI, sistem skor real-time, efek suara procedural via Web Audio API, dan UI responsif.",
+  "categories": ["web", "frontend"],
+  "links": [
+    {
+      "type": "github",
+      "url": "https://github.com/Raka-coder/lexicon-timebomb-game",
+      "label": "View Code"
+    },
+    {
+      "type": "live",
+      "url": "https://lexicon-timebomb.vercel.app",
+      "label": "Live Demo"
+    }
+  ],
+  "image": "/images/lexicon-timebomb.webp",
+  "imageAlt": "Lexicon Timebomb Game Preview",
+  "technologies": ["TypeScript", "React", "Hono", "Socket.IO", "Vite", "Tailwind CSS", "Zustand", "Bun", "shadcn/ui"],
+  "status": "completed",
+  "featured": true,
+  "createdAt": "2026-05-22"
+}

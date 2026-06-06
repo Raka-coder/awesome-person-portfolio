@@ -7,10 +7,12 @@ import project4 from "./projects/project-4.json";
 import project5 from "./projects/project-5.json";
 import project6 from "./projects/project-6.json";
 import project7 from "./projects/project-7.json"
+import project8 from "./projects/project-8.json"
+import project9 from "./projects/project-9.json"
 
 export const projectCategories: ProjectCategory[] = projectCategoriesData as ProjectCategory[];
 
-const allProjectsRaw = [project1, project2, project3, project4, project5, project6, project7];
+const allProjectsRaw = [project1, project2, project3, project4, project5, project6, project7, project8, project9];
 
 export const sampleProjects: Project[] = allProjectsRaw.map((p) => ({
   ...p,
