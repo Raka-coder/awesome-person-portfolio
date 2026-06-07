@@ -16,7 +16,7 @@
       "label": "Visit Site"
     }
   ],
-  "image": "/images/turbosched.webp",
+  "image": "/api/images/turbosched.webp",
   "imageAlt": "TurboSched Website Screenshot",
   "technologies": ["Next.js", "TypeScript", "Shadcn", "Framer Motion"],
   "status": "completed",

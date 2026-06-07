@@ -11,7 +11,7 @@
       "label": "Visit Site"
     }
   ],
-  "image": "/images/imk-umkm.webp",
+  "image": "/api/images/imk-umkm.webp",
   "imageAlt": "IMK UMKM Screenshot",
   "technologies": ["Next.js", "TypeScript", "Shadcn", "Framer Motion", "Supabase"],
   "status": "completed",

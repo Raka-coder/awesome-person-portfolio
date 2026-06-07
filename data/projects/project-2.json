@@ -16,7 +16,7 @@
       "label": "Live Demo"
     }
   ],
-  "image": "/images/turdif.webp",
+  "image": "/api/images/turdif.webp",
   "imageAlt": "Project Turunan Diferensial Kalkalus I",
   "technologies": ["React", "Tailwind", "Mathjax"],
   "status": "completed",

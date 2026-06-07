@@ -11,7 +11,7 @@
       "label": "View Code"
     }
   ],
-  "image": "/images/smart-home.webp",
+  "image": "/api/images/smart-home.webp",
   "imageAlt": "Smart Home IoT with google home",
   "technologies": ["C++", "PlatformIO", "Sinric Pro", "Google Home", "ESP8266"],
   "status": "completed",

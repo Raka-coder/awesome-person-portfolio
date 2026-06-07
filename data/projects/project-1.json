@@ -16,7 +16,7 @@
       "label": "Live Demo"
     }
   ],
-  "image": "/images/geometpop.webp",
+  "image": "/api/images/geometpop.webp",
   "imageAlt": "Project  GeometPop Kalkulus II",
   "technologies": ["React", "Tailwind", "Mathjax"],
   "status": "completed",

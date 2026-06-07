@@ -16,7 +16,7 @@
       "label": "Visit Site"
     }
   ],
-  "image": "/images/portfolio.webp",
+  "image": "/api/images/portfolio.webp",
   "imageAlt": "Portfolio Website Screenshot",
   "technologies": ["Next.js", "TypeScript", "Shadcn", "Framer Motion"],
   "status": "completed",

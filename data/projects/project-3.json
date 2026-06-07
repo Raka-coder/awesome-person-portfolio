@@ -16,7 +16,7 @@
       "label": "Try Demo"
     }
   ],
-  "image": "/images/react-supabase.webp",
+  "image": "/api/images/react-supabase.webp",
   "imageAlt": "Task Management App Screenshot",
   "technologies": ["React", "Tailwind", "Supabase"],
   "status": "completed",

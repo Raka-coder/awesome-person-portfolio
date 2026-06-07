@@ -19,6 +19,7 @@ A modern, high-performance portfolio website built with **Next.js 16 (App Router
 - **Categorized Projects** - Dynamic filtering and detailed project pages
 - **Secure Contact Form** - Zod validation, rate limiting, honeypot, XSS protection
 - **JSON-Driven Content** - Update projects, skills, experience without code changes
+- **Vercel Blob Storage** - Project images stored in Vercel Blob, served via secure API proxy
 - **Section-Based Architecture** - Components organized by route and section
 
 ---
@@ -35,6 +36,7 @@ A modern, high-performance portfolio website built with **Next.js 16 (App Router
 | **Forms** | React Hook Form |
 | **Validation** | Zod |
 | **Email** | Nodemailer (SMTP) |
+| **Storage** | Vercel Blob Storage |
 | **Runtime** | Bun (recommended) |
 
 ---
@@ -46,6 +48,7 @@ A modern, high-performance portfolio website built with **Next.js 16 (App Router
 ├── app/                          # Next.js App Router
 │   ├── about/                    # About page
 │   ├── api/contact/              # Contact API endpoint
+│   ├── api/images/[...slug]/     # Vercel Blob image proxy
 │   ├── contact/                  # Contact page
 │   ├── home/                     # Home page
 │   ├── projects/                 # Projects page
@@ -118,7 +121,7 @@ bun install
 
 ### Environment Variables
 
-Create `.env.local` in the root directory:
+Create `.env.local` in the root directory, or use `.env.example` as a template:
 
 ```env
 # Email Configuration (for contact form)
@@ -128,6 +131,14 @@ EMAIL_RECEIVER=receiver-email@gmail.com
 
 # Optional: Contact email displayed on frontend
 NEXT_PUBLIC_CONTACT_EMAIL=your-email@gmail.com
+
+# Vercel Blob Storage (for project images)
+BLOB_STORE_ID=your-store-id
+BLOB_READ_WRITE_TOKEN=your-token-here
+
+# Optional: Webhook public key for blob storage
+BLOB_WEBHOOK_PUBLIC_KEY=your-public-key
+BLOB_PREFIX=path-images
 ```
 
 ### Development
@@ -201,23 +212,55 @@ import SpotlightCard from "@/components/about/shared/SpotlightCard";
 
 ---
 
+## Image Storage (Vercel Blob)
+
+Project images are stored in **Vercel Blob Storage** under the `projects-images/` directory and served through a secure API proxy route.
+
+### Architecture
+
+```
+Client → /api/images/{filename} → @vercel/blob (private store) → Image stream
+```
+
+- **Private store** - Images are not publicly accessible; require `BLOB_READ_WRITE_TOKEN`
+- **API proxy** - `app/api/images/[...slug]/route.ts` fetches and streams images
+- **Cache headers** - Immutable caching (`max-age=31536000`) for performance
+- **No secrets exposed** - Token and Store ID live in `.env.local` only
+
+### File Naming Convention
+
+| Blob Path | API Route | JSON `image` field |
+|-----------|-----------|-------------------|
+| `projects-images/geometpop.webp` | `/api/images/geometpop.webp` | `/api/images/geometpop.webp` |
+
+---
+
 ## Adding New Projects
 
-1. Create a new JSON file in `data/projects/`:
+1. Upload the project image to Vercel Blob Storage under the `projects-images/` directory (e.g. `projects-images/my-project.webp`)
+
+2. Create a new JSON file in `data/projects/`:
    ```json
    {
      "id": 10,
-     "title": "Project Name",
+     "name": "Project Name",
      "description": "Description here",
-     "image": "https://example.com/image.png",
-     "category": "web",
-     "github": "https://github.com/username/repo",
-     "demo": "https://demo-url.com",
-     "tech": ["Next.js", "TypeScript", "Tailwind"]
+     "longDescription": "Detailed description",
+     "categories": ["web", "frontend"],
+     "links": [
+       { "type": "github", "url": "https://github.com/username/repo", "label": "View Code" },
+       { "type": "live", "url": "https://demo-url.com", "label": "Live Demo" }
+     ],
+     "image": "/api/images/my-project.webp",
+     "imageAlt": "Project Name Preview",
+     "technologies": ["Next.js", "TypeScript", "Tailwind"],
+     "status": "completed",
+     "featured": false,
+     "createdAt": "2025-01-01"
    }
    ```
 
-2. Import in `data/projects.ts`:
+3. Import in `data/projects.ts`:
    ```typescript
    import project10 from "./projects/project-10.json";
    ```

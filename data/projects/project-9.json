@@ -11,7 +11,7 @@
       "label": "View Code"
     }
   ],
-  "image": "/images/laravel-pos-atk.webp",
+  "image": "/api/images/laravel-pos-atk.webp",
   "imageAlt": "Laravel SI POS ATK Dashboard",
   "technologies": ["PHP", "Laravel", "React", "Inertia.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Midtrans", "Gemini AI", "Vite", "shadcn/ui", "Zustand", "TanStack Query"],
   "status": "completed",

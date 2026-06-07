@@ -16,7 +16,7 @@
       "label": "Live Demo"
     }
   ],
-  "image": "/images/lexicon-timebomb.webp",
+  "image": "/api/images/lexicon-timebomb.webp",
   "imageAlt": "Lexicon Timebomb Game Preview",
   "technologies": ["TypeScript", "React", "Hono", "Socket.IO", "Vite", "Tailwind CSS", "Zustand", "Bun", "shadcn/ui"],
   "status": "completed",
